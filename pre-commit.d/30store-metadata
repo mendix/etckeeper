@@ -142,12 +142,4 @@ if [ "$VCS" = git ] || [ "$VCS" = hg ] || [ "$VCS" = bzr ] || [ "$VCS" = darcs ]
 	chmod 700 .etckeeper
 
 	generate_metadata >> .etckeeper
-
-	# stage the file as part of the current commit
-	if [ "$VCS" = git ]; then
-		# this will do nothing if the metadata file is unchanged.
-		git add .etckeeper
-	fi
-	# hg, bzr and darcs add not done, they will automatically
-	# include the file in the current commit
 fi

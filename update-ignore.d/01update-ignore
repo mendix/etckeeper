@@ -154,6 +154,10 @@ writefile () {
 	ignore ".sw?"
 	ignore "#*#"
 	ignore DEADJOE
+	nl
+
+	comment "also ignore .etckeeper because it's tracking more than git ls-files can detect"
+	ignore ".etckeeper"
 
 	nl
 	comment "end section $managed_by_etckeeper"
